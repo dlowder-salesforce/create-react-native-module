@@ -16,17 +16,17 @@ ${content}
       mysnap.push(`* ensureDir dir: ${dir}\n`);
       return Promise.resolve();
     },
-    readFileSync: (jsonFilePath) => {
+    readFile: (jsonFilePath, _, cb) => {
       mysnap.push({
-        call: 'fs.readFileSync',
+        call: 'fs.readFile',
         jsonFilePath,
       });
-      return `{
+      return cb(null, `{
   "name": "example",
   "scripts": {
     "test": "echo 'not implemented' && exit 1"
   }
-}`;
+}`);
     },
     writeFileSync: (path, json, options) => {
       mysnap.push({

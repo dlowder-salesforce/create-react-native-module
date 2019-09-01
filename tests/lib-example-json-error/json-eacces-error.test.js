@@ -9,8 +9,8 @@ test('create module with example, with `EACCES permission denied` error', async 
     ...ioInject,
     fs: {
       ...ioInject.fs,
-      readFileSync: (_) => {
-        throw new Error('EACCES permission denied');
+      readFile: (_1, _2, cb) => {
+        cb(new Error('EACCES permission denied'));
       }
     }
   };
@@ -28,5 +28,5 @@ test('create module with example, with `EACCES permission denied` error', async 
     error = e;
   }
   expect(error).toBeDefined();
-  expect(error.message).toMatch(/alice-bettty.example.package.json: EACCES permission denied/);
+  expect(error.message).toMatch(/EACCES permission denied/);
 });

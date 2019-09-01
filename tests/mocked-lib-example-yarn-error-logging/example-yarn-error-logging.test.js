@@ -12,9 +12,9 @@ jest.mock('fs-extra', () => ({
     mockpushit({ ensureDir: dir });
     return Promise.resolve();
   },
-  readFileSync: (path) => {
-    mockpushit({ readFileSyncFromPath: path });
-    return `{ "name": "x", "scripts": { "test": "exit 1" } }`;
+  readFile: (path, _, cb) => {
+    mockpushit({ readFileFromPath: path });
+    cb(null, `{ "name": "x", "scripts": { "test": "exit 1" } }`);
   },
   writeFileSync: (path, json, options) => {
     mockpushit({ writeFileSyncToPath: path, json, options });
