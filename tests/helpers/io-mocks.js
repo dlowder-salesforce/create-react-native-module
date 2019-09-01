@@ -28,13 +28,14 @@ ${content}
   }
 }`);
     },
-    writeFileSync: (path, json, options) => {
+    writeFile: (path, json, options, cb) => {
       mysnap.push({
         call: 'fs.writeFileSync',
         filePath: path,
         json,
         options,
       });
+      cb();
     },
   },
   execa: {

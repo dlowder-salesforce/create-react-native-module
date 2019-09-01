@@ -16,8 +16,9 @@ jest.mock('fs-extra', () => ({
     mockpushit({ readFileFromPath: path });
     cb(null, `{ "name": "x", "scripts": { "test": "exit 1" } }`);
   },
-  writeFileSync: (path, json, options) => {
+  writeFile: (path, json, options, cb) => {
     mockpushit({ writeFileSyncToPath: path, json, options });
+    cb();
   },
 }));
 jest.mock('execa', () => ({
