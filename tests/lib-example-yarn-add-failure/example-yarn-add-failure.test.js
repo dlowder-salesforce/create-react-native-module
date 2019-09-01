@@ -8,10 +8,11 @@ test('create module with example, with `yarn add` failure', async () => {
   const ioInjected = {
     ...ioInject,
     execa: {
-      commandSync: (command, _) => {
+      command: (command, _) => {
         if (/yarn add/.test(command)) {
-          throw new Error('ENOPERM not permitted');
+          return Promise.reject(new Error('ENOPERM not permitted'));
         }
+        return Promise.resolve();
       }
     }
   };
