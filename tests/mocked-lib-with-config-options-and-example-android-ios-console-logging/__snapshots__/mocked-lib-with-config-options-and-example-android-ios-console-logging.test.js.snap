@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create alice-bobbi module using mocked lib with config options, with exampe, for Android and iOS including console logging 1`] = `
+exports[`create alice-bobbi module using mocked lib with config options, with example, for Android and iOS including console logging 1`] = `
 Array [
   Object {
     "warn": Array [

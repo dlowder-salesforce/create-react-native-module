@@ -39,7 +39,7 @@ global.console = {
   },
 };
 
-test('create alice-bobbi module using mocked lib with config options, with exampe, for Android and iOS including console logging', () => {
+test('create alice-bobbi module using mocked lib with config options, with example, for Android and iOS including console logging', () => {
   const options = {
     platforms: ['android', 'ios'],
     name: 'alice-bobbi',
