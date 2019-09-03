@@ -43,6 +43,7 @@ test('create alice-bobbi module using mocked lib with config options, with examp
   const options = {
     platforms: ['android', 'ios'],
     name: 'alice-bobbi',
+    packageIdentifier: 'com.alicebits',
     githubAccount: 'alicebits',
     authorName: 'Alice',
     authorEmail: 'contact@alice.me',
