@@ -13,6 +13,7 @@ test('create alice-bobbi module with example, with config options', () => {
     authorName: 'Alice',
     authorEmail: 'contact@alice.me',
     license: 'ISC',
+    useCocoapods: true,
     generateExample: true,
     exampleName: 'test-demo',
     exampleReactNativeVersion: 'react-native@0.60',
