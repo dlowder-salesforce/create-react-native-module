@@ -3,12 +3,6 @@
 exports[`create alice-bobbi module using mocked lib with config options, with exampe, for Android and iOS including console logging 1`] = `
 Array [
   Object {
-    "warn": Array [
-      "While \`{DEFAULT_PACKAGE_IDENTIFIER}\` is the default package
-      identifier, it is recommended to customize the package identifier.",
-    ],
-  },
-  Object {
     "info": Array [
       "CREATE new React Native module with the following options:
 
@@ -16,7 +10,7 @@ Array [
   name: alice-bobbi
   prefix: 
   modulePrefix: react-native
-  packageIdentifier: com.reactlibrary
+  packageIdentifier: com.alicebits
   platforms: android,ios
   githubAccount: alicebits
   authorName: Alice
@@ -95,10 +89,10 @@ Array [
     "ensureDir": "react-native-alice-bobbi/android/src/main/",
   },
   Object {
-    "ensureDir": "react-native-alice-bobbi/android/src/main/java/com/reactlibrary/",
+    "ensureDir": "react-native-alice-bobbi/android/src/main/java/com/alicebits/",
   },
   Object {
-    "ensureDir": "react-native-alice-bobbi/android/src/main/java/com/reactlibrary/",
+    "ensureDir": "react-native-alice-bobbi/android/src/main/java/com/alicebits/",
   },
   Object {
     "ensureDir": "react-native-alice-bobbi/android/",
@@ -143,7 +137,7 @@ Array [
 #### Android
 
 1. Open up \`android/app/src/main/java/[...]/MainApplication.java\`
-  - Add \`import com.reactlibrary.AliceBobbiPackage;\` to the imports at the top of the file
+  - Add \`import com.alicebits.AliceBobbiPackage;\` to the imports at the top of the file
   - Add \`new AliceBobbiPackage()\` to the list returned by the \`getPackages()\` method
 2. Append the following lines to \`android/settings.gradle\`:
   	\`\`\`
@@ -333,7 +327,7 @@ def configureReactNativePom(def pom) {
         name packageJson.title
         artifactId packageJson.name
         version = packageJson.version
-        group = \\"com.reactlibrary\\"
+        group = \\"com.alicebits\\"
         description packageJson.description
         url packageJson.repository.baseUrl
 
@@ -401,14 +395,14 @@ afterEvaluate { project ->
   Object {
     "outputFileName": "react-native-alice-bobbi/android/src/main/AndroidManifest.xml",
     "theContent": "<manifest xmlns:android=\\"http://schemas.android.com/apk/res/android\\"
-          package=\\"com.reactlibrary\\">
+          package=\\"com.alicebits\\">
 
 </manifest>
 ",
   },
   Object {
-    "outputFileName": "react-native-alice-bobbi/android/src/main/java/com/reactlibrary/AliceBobbiModule.java",
-    "theContent": "package com.reactlibrary;
+    "outputFileName": "react-native-alice-bobbi/android/src/main/java/com/alicebits/AliceBobbiModule.java",
+    "theContent": "package com.alicebits;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -438,8 +432,8 @@ public class AliceBobbiModule extends ReactContextBaseJavaModule {
 ",
   },
   Object {
-    "outputFileName": "react-native-alice-bobbi/android/src/main/java/com/reactlibrary/AliceBobbiPackage.java",
-    "theContent": "package com.reactlibrary;
+    "outputFileName": "react-native-alice-bobbi/android/src/main/java/com/alicebits/AliceBobbiPackage.java",
+    "theContent": "package com.alicebits;
 
 import java.util.Arrays;
 import java.util.Collections;
